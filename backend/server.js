@@ -46,24 +46,9 @@ app.use(
 //use flash messages
 app.use(flash());
 
-app.get('/', (req, res) => {
-    res.send('its workin!!')
-})
+//setting up routes for the server to listen to
+app.use('/', mainRoutes)
 
-app.post('/post', async (req, res) => {
-    const newPost = new Post({
-        title: req.body.title,
-        content: req.body.content,
-        image: req.body.image,
-        cloudinaryId: req.body.cloudinaryId,
-        comments: req.body.comments,
-
-
-    })
-
-    const createdPost = await newPost.save()
-    res.json(createdPost)
-})
 
 app.listen(process.env.PORT, () => {
     console.log("Server is running, you better catch it!");
