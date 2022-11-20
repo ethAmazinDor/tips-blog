@@ -48,6 +48,7 @@ const Hero = () => {
                         h="50px"
                         size={isLargerThan62 ? 'lg' : 'md'}
                         mb={isLargerThan62 ? '0' : '10'}
+
                     >
                         Check Out Our Posts
                     </Button>
